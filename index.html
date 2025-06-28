@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Carbon Transparency Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9fafb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .product-card {
+      width: 320px;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .product-img {
+      background-color: #e2e8f0;
+      height: 180px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 50px;
+      margin-bottom: 15px;
+    }
+
+    .product-name {
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin: 10px 0;
+    }
+
+    .price {
+      color: #16a34a;
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+
+    .carbon-label {
+      display: inline-block;
+      background-color: #d1fae5;
+      color: #065f46;
+      font-size: 0.85rem;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    .tooltip-button {
+      margin-top: 10px;
+      background-color: #4ade80;
+      color: white;
+      padding: 6px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .tooltip-info {
+      margin-top: 10px;
+      font-size: 0.85rem;
+      background: #f1f5f9;
+      padding: 8px;
+      border-radius: 8px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="product-card">
+    <div class="product-img">👟</div>
+    <div class="product-name">Sustainable Sneakers</div>
+    <div class="price">₹2,199</div>
+    <div class="carbon-label">🟢 1.2 kg CO₂</div>
+
+    <button class="tooltip-button" onclick="toggleInfo()">What does this mean?</button>
+    <div class="tooltip-info" id="infoBox">
+      This product emits 1.2 kg CO₂ during production — about the same as driving a car for 6 km.
+    </div>
+  </div>
+
+  <script>
+    function toggleInfo() {
+      const infoBox = document.getElementById("infoBox");
+      infoBox.style.display = infoBox.style.display === "block" ? "none" : "block";
+    }
+  </script>
+
+</body>
+</html>
